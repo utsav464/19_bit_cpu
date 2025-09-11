@@ -83,7 +83,7 @@ Opcode: `10001`
 
 
 19_bit_single_cycle_cpu/
-│
+## 📁 Project Structure
 ├── alu.v               # Arithmetic Logic Unit
 ├── alu_decoder.v       # ALU control logic
 ├── control_unit.v      # Main control signals
