@@ -9,19 +9,22 @@ It supports a **custom instruction set architecture (ISA)** with R-type, Load/St
 
 ### 🔹 R-type (Register–Register)
 Format: | opcode (5) | rd (3) | rs1 (3) | rs2 (3) | funct (5) | 
-  - Arithmetic & Logic operations (controlled by `funct` field).
-  - | op      | Meaning            | Description |
-|:-----------:|:------------------:|:-----------|
-| `00001`     | ADD                | `A + B` |
-| `00010`     | SUB                | `A - B` |
-| `00011`     | MUL                | `A * B` |
-| `00100`     | DIV                | `A / B` (zero-guarded) |
-| `00101`     | INC                | `A + 1` |
-| `00110`     | DEC                | `A - 1` |
-| `00111`     | AND                | `A & B` |
-| `01000`     | OR                 | `A | B` |
-| `01001`     | XOR                | `A ^ B` |
-| `01010`     | NOT                | `~A` (unary op; B ignored) |
+
+**Arithmetic & Logic operations (controlled by `op` field):**
+
+| op     | Meaning | Description            |
+|:------:|:--------|:-----------------------|
+| 00001  | ADD     | A + B                  |
+| 00010  | SUB     | A - B                  |
+| 00011  | MUL     | A * B                  |
+| 00100  | DIV     | A / B (zero-guarded)   |
+| 00101  | INC     | A + 1                  |
+| 00110  | DEC     | A - 1                  |
+| 00111  | AND     | A & B                  |
+| 01000  | OR      | A \| B                 |
+| 01001  | XOR     | A ^ B                  |
+| 01010  | NOT     | ~A (unary op; B ignored) |
+
 
 ---
 
