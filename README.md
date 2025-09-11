@@ -82,20 +82,26 @@ Opcode: `10001`
 ---
 
 
-19_bit_single_cycle_cpu/
 ## 📁 Project Structure
+```
+19_bit_single_cycle_cpu/
+│
 ├── alu.v               # Arithmetic Logic Unit
 ├── alu_decoder.v       # ALU control logic
-├── control_unit.v      # Main control signals
-├── datamem.v           # Data memory
-├── imm_gen.v           # Immediate generator
-├── instr_mem.v         # Instruction memory
-├── muxes.v             # Multiplexers
-├── reg_file.v          # Register file (r0–r7)
-├── single_cycle_core.v # Top-level processor module
-├── single_cycle_tb.v   # Testbench for simulation
-├── memfile.hex         # Sample program (machine code)
-└── README.md           # Project documentation
+├── control_unit.v      # Main control signals (generate memread, memwrite, alusrc, regwrite, branch signals, etc.)
+├── datamem.v           # Data memory (word-addressable)
+├── imm_gen.v           # Immediate / address extraction helpers
+├── instr_mem.v         # Instruction memory (load memfile.hex via $readmemh)
+├── muxes.v             # Multiplexers used in datapath
+├── reg_file.v          # Register file (r0–r7), write-enable guarded
+├── single_cycle_core.v # Top-level datapath & control integration
+├── single_cycle_tb.v   # Testbench for functional simulation (clock, reset, waveform)
+├── memfile.hex         # Program image (one 5-hex-digit word per line)
+└── README.md           # This documentation
+
+
+
+---
 
 
 
